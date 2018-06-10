@@ -24,8 +24,8 @@ int main(int argc, char** argv){
   goal.target_pose.header.stamp = ros::Time::now();
 
   // Define a position and orientation for the robot to reach
-  goal.target_pose.pose.position.x = 3.5;
-  goal.target_pose.pose.position.y = -0.26;
+  goal.target_pose.pose.position.x = 4.57;
+  goal.target_pose.pose.position.y = 2.58;
   goal.target_pose.pose.orientation.w = 1.0;
 
    // Send the goal position and orientation for the robot to reach
@@ -43,8 +43,9 @@ int main(int argc, char** argv){
     ros::Duration(5.0).sleep();
 
     // Defining a drop-off goal for the robot to go after pick-up
-    goal.target_pose.pose.position.x = 4.57;
-    goal.target_pose.pose.position.y = 2.58;
+    
+    goal.target_pose.pose.position.x = 3.5;
+    goal.target_pose.pose.position.y = -0.26;
     goal.target_pose.pose.orientation.w = 1.0;
 
     ROS_INFO("Sending Drop-off goal.......");
@@ -62,7 +63,7 @@ int main(int argc, char** argv){
   }
   else
   {
-    ROS_INFO("The base failed to move forward 1 meter for some reason");
+    ROS_INFO("The robot sucked this time around!");
   }
   return 0;
 }
